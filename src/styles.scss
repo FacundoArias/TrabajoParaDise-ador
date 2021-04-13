@@ -1,0 +1,253 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.contenedor-nav {
+  position: fixed;
+  width: 100%;
+  min-height: 50px;
+  z-index: 30;
+}
+
+.ul__nav {
+  font-family: "Nunito";
+  font-weight: 200;
+  font-size: 1.5em;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  transition: 0.5s;
+
+  li {
+    padding: 0 30px;
+    a {
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+    }
+  }
+}
+
+.borde-abajo::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: rgb(255, 255, 255);
+  transition: width 0.3s;
+}
+.borde-abajo:hover::after {
+  width: 100%;
+  transition: width 0.3s;
+}
+/*TERMINA NAV*/ /*TERMINA NAV*/ /*TERMINA NAV*/ /*TERMINA NAV*/ /*TERMINA NAV*/ /*TERMINA NAV*/ /*TERMINA NAV*/
+
+.contenedor-main {
+  width: 400vw;
+  height: 100vh;
+  display: flex;
+  background: rgb(106,46,94);
+  background: linear-gradient(311deg, rgba(106,46,94,1) 0%, rgba(217,68,54,1) 25%, rgba(239,118,50,1) 50%, rgba(217,68,54,1) 75%, rgba(106,46,94,1) 100%);
+
+  z-index: 50;
+}
+
+.seccion1 {
+  .contenedor-nombre {
+    z-index: 20;
+    h1 {
+      font-family: "Montserrat";
+      font-weight: 500;
+      font-size: 5em;
+      color: #fff;
+    }
+    h5 {
+      font-family: "Nunito";
+      font-size: 2em;
+      font-weight: 200;
+      color: #fff;
+    }
+  }
+
+  img {
+    width: 50%;
+  }
+}
+
+.btn-desplagar-barra {
+  display: none;
+  font-size: 60px;
+  color: rgb(255, 255, 255);
+  z-index: 150;
+  transform: rotateZ(90deg);
+}
+
+/**MEDIA QUERIES*/
+
+@media (max-width: 576px) {
+  .contenedor-home-row {
+    .contenedor-nombre {
+      h1 {
+        font-size: 2.5em !important;
+      }
+      h5 {
+        font-size: 1.5em !important;
+      }
+    }
+    .contenedor-logo {
+      img {
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contenedor-main {
+    display: block;
+    width: 100vw;
+    height: 400vh;
+    background: rgb(106, 46, 94);
+    background: linear-gradient(
+      0deg,
+      rgba(106, 46, 94, 1) 2%,
+      rgba(217, 68, 54, 1) 25%,
+      rgba(239, 118, 50, 1) 50%,
+      rgba(217, 68, 54, 1) 75%,
+      rgba(106, 46, 94, 1) 100%
+    );
+  }
+
+  .contenedor-home {
+    display: flex;
+    align-items: center;
+  }
+  .contenedor-nombre {
+    h1 {
+      font-size: 4em !important ;
+    }
+    h5 {
+      font-size: 1.6em !important;
+    }
+  }
+
+  .btn-desplagar-barra {
+    display: block;
+  }
+
+  .ul__nav {
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(106, 46, 94, 0.8);
+    touch-action: none;
+
+    li {
+      padding: 30px 0;
+      font-size: 1em;
+    }
+  }
+}
+
+@media (max-width: 994px) {
+  .contenedor-nombre {
+    transform: translateY(60px) !important;
+
+    h1 {
+      font-size: 4em !important ;
+    }
+    h5 {
+      font-size: 1.8em !important;
+    }
+  }
+
+  .contenedor-logo {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1200px) and(min-width:994px) {
+  .contenedor-nombre {
+    transform: translateY(60px) !important ;
+    h1 {
+      font-size: 4em !important ;
+    }
+    h5 {
+      font-size: 1.6em !important ;
+    }
+  }
+
+  .contenedor-logo {
+    display: flex;
+    justify-content: center;
+    img {
+      width: 42%;
+    }
+  }
+}
+
+@media (min-width: 1200px) and(max-width:1400px) {
+  .contenedor-nombre {
+    h1 {
+      font-size: 4.4em !important;
+    }
+    h5 {
+      font-size: 1.7em !important;
+    }
+  }
+}
+
+@media (min-width: 1300px) {
+  .contenedor-nombre {
+    transform: translateX(40px) !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  .contenedor-nombre {
+    transform: translateX(80px) !important;
+  }
+}
+
+/*EFECTOS PARA NAVEGADOR*/
+.mostrar-ocultar-barra {
+  transform: translateX(-1000px);
+}
+
+.rotar-flecha {
+  animation: rotar 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+
+.fijar-flecha {
+  animation: fijar 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+
+@keyframes fijar {
+  0% {
+    transform: rotateZ(90deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+@keyframes rotar {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(90deg);
+  }
+}
+/*EFECTOS PARA NAVEGADOR*/

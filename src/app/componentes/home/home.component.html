@@ -1,0 +1,29 @@
+<div class="seccion1 w-100 h-100 vh-100" id="home">
+  <div
+    class="container-fluid d-md-flex align-items-md-center h-100 contenedor-home"
+  >
+    <div class="row contenedor-home-row" *ngIf="ancho > 576; else enMobile">
+      <div class="col-xl-4 col-lg-12 col-md-12 contenedor-nombre">
+        <h1>INES</h1>
+        <h1>MARCONATO</h1>
+        <h5>Diseño grafico</h5>
+      </div>
+      <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 contenedor-logo">
+        <img src="../../../assets/img/logo.png" alt="" />
+      </div>
+    </div>
+
+    <ng-template #enMobile>
+      <div class="row contenedor-home-row text-center">
+        <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 contenedor-logo">
+          <img src="../../../assets/img/logo.png" alt="" />
+        </div>
+        <div class="col-xl-4 col-lg-12 col-md-12 contenedor-nombre">
+          <h1>INES</h1>
+          <h1>MARCONATO</h1>
+          <h5>Diseño grafico</h5>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>
